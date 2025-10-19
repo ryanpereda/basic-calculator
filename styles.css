@@ -17,9 +17,12 @@ body {
 }
 
 .display {
+    display:flex;
+    flex-wrap: wrap;
     height: 100px;
     margin: 20px;
     background-color: silver;
+    font-size: 30px;
 }
 
 .buttons {
@@ -34,26 +37,25 @@ body {
     flex: 3;
 }
 
-.numbers div {
-    box-sizing: border-box;
-    flex: 33%;
+.numbers div, .operators div {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: skyblue;
     border-style: solid;
     border-width: 1px;
+    cursor: pointer;
+}
+
+.numbers div {
+    box-sizing: border-box;
+    flex: 33%;
+    background-color: skyblue;
     height: 20%;
 }
 
 .operators div  {
     flex: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: lightcoral;
-    border-style: solid;
-    border-width: 1px;
     
 }
 

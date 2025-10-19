@@ -28,10 +28,35 @@ function operate(a, b, operator) {
     }
 }
 
+function clickFunction(button) {
+    button.addEventListener('click', () => {
+        doMath(button.textContent)
+    })
+}
+
+function doMath(context) {
+    switch(context) {
+        default:
+            console.log(context)
+            display.textContent += context;
+            console.log(display.textContent)
+    }
+}
+
 let display = document.querySelector(".display")
 let buttons = document.querySelector(".buttons")
 let numbers = document.querySelector(".numbers")
 let operators = document.querySelector(".operators")
+let plus = document.querySelector(".plus")
+let minus = document.querySelector(".minus")
+let times = document.querySelector(".times")
+let divided = document.querySelector(".divided")
+let equals = document.querySelector(".equals")
+clickFunction(plus)
+clickFunction(minus)
+clickFunction(times)
+clickFunction(divided)
+clickFunction(equals)
 
 for (let i = 0; i < 3; i++) {
     let button = document.createElement('div')
@@ -39,12 +64,14 @@ for (let i = 0; i < 3; i++) {
         case 0:
             button.className = 'button'
             button.textContent = "⌫"
-            numbers.append(button)      
+            numbers.append(button)
+            clickFunction(button)      
             break;
         case 1:
             button.className = 'button'
             button.textContent = "C"
-            numbers.append(button)      
+            numbers.append(button)
+            clickFunction(button)      
             break;      
         case 2:
             numbers.append(button)
@@ -58,6 +85,7 @@ for (let i = 2; i >= 0; i--) {
         button.className = 'button'
         button.textContent = i * 3 + j
         numbers.append(button)
+        clickFunction(button)
     }
     
 }
@@ -71,12 +99,14 @@ for (let i = 0; i < 3; i++) {
         case 1:
             button.className = 'button'
             button.textContent = 0
-            numbers.append(button)      
+            numbers.append(button)
+            clickFunction(button)      
             break;      
         case 2:
             button.className = 'button'
             button.textContent = "."
-            numbers.append(button)      
+            numbers.append(button)   
+            clickFunction(button)   
             break;                 
     }
 }
