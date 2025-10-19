@@ -23,6 +23,8 @@ body {
     margin: 20px;
     background-color: silver;
     font-size: 30px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .buttons {
